@@ -79,7 +79,7 @@ class Administration:
     @Given("I am on active Emergency Center")
     def step(context):
         browser.click_on_link_text(browser, "EMERGENCY CENTER")
-        browser.click_on_link_text(browser, "ACTIVE")
+        browser.click_on_partial_link_text(browser, "ACTIVE")
 
 
 

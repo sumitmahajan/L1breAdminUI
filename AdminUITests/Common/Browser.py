@@ -64,6 +64,10 @@ class Browser(object):
         elem = self.driver.find_element_by_link_text(text)
         elem.click()
 
+    def click_on_partial_link_text(self,text):
+        elem = self.driver.find_element_by_partial_link_text(text)
+        elem.click()
+
     def assert_view_state(self,selector):
         self.driver.implicitly_wait(10)
         elem = self.driver.find_element_by_css_selector(selector).is_displayed()
@@ -74,7 +78,7 @@ class Browser(object):
         self.driver.find_element_by_css_selector(selector).send_keys(Keys.RETURN)
 
 
-    def close(context,self):
+    def close(self):
         self.driver.stop_client()
         self.driver.close()
 
